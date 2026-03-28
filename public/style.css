@@ -6,7 +6,8 @@ body {
 
 .container {
   max-width: 420px;
-  margin: auto;
+  width: 100%;       /* 🔥 IMPORTANT */
+  margin: 0 auto;
   padding: 16px;
 }
 
