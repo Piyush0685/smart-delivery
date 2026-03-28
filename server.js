@@ -1,23 +1,21 @@
 const express = require("express");
 const app = express();
 
-app.use(express.json());
+// 🔥 THIS LINE FIXES YOUR ISSUE
 app.use(express.static("public"));
+
+app.use(express.json());
 
 app.post("/create-order", (req, res) => {
   const { deliveryType } = req.body;
 
-  let itemTotal = 250;
-  let deliveryFee = 30;
-  let doorstepFee = deliveryType === "doorstep" ? 20 : 0;
-  let partnerBonus = deliveryType === "doorstep" ? 15 : 0;
+  let total = 250 + 30;
 
-  const total = itemTotal + deliveryFee + doorstepFee;
+  if (deliveryType === "doorstep") {
+    total += 20;
+  }
 
-  res.json({
-    total,
-    partnerBonus
-  });
+  res.json({ total });
 });
 
 const PORT = process.env.PORT || 3000;
