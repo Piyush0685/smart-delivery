@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Checkout</h2>
+
+  <div class="card">
+    <h3>Delivery Preference</h3>
+
+    <div class="option" id="gateOption" onclick="selectType('gate')">
+      <div>
+        <strong>Gate Delivery</strong><br>
+        <small>Meet at gate/security</small>
+      </div>
+      <div class="price">Free</div>
+    </div>
+
+    <div class="option" id="doorOption" onclick="selectType('doorstep')">
+      <div>
+        <strong>Doorstep Delivery</strong><br>
+        <small>Delivered to your door</small>
+      </div>
+      <div class="price">+₹20</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Bill Summary</h3>
+
+    <p class="success-text">✔ Transparent pricing • No hidden charges</p>
+
+    <div class="row">
+      <span>Item Total</span>
+      <span>₹250</span>
+    </div>
+
+    <div class="row">
+      <span>Delivery Fee</span>
+      <span>₹30</span>
+    </div>
+
+    <div class="row" id="doorstepRow"></div>
+
+    <div class="row total">
+      <span>Total</span>
+      <span>₹<span id="total">280</span></span>
+    </div>
+
+    <button class="pay-btn" id="payBtn" onclick="placeOrder()">
+      <span id="btnText">Pay ₹280</span>
+      <span class="loader" id="loader"></span>
+    </button>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <div class="check">✔</div>
+    <h2>Order Placed</h2>
+    <p>Your food is on the way 🚀</p>
+    <button onclick="closeModal()">Continue</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
