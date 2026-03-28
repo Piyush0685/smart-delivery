@@ -1,8 +1,7 @@
 const express = require("express");
 const app = express();
 
-// 🔥 THIS LINE FIXES YOUR ISSUE
-app.use(express.static("public"));
+app.use(express.static("public")); // 🔥 VERY IMPORTANT
 
 app.use(express.json());
 
