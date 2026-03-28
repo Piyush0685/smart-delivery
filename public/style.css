@@ -1,20 +1,35 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-  background: #f8f8f8;
-  margin: 0;
+/* RESET */
+* {
+  box-sizing: border-box;
 }
 
+/* BODY */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  background: #f8f8f8;
+}
+
+/* CONTAINER (MOBILE FIRST) */
 .container {
-  max-width: 420px;
-  width: 100%;       /* 🔥 IMPORTANT */
-  margin: 0 auto;
+  width: 100%;
   padding: 16px;
 }
 
+/* DESKTOP CENTERING */
+@media (min-width: 600px) {
+  .container {
+    max-width: 420px;
+    margin: auto;
+  }
+}
+
+/* HEADER */
 h2 {
   text-align: center;
 }
 
+/* CARD */
 .card {
   background: white;
   padding: 16px;
@@ -24,11 +39,19 @@ h2 {
   animation: fadeUp 0.4s ease;
 }
 
+/* CARD ANIMATION */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* DELIVERY OPTIONS */
 .option {
   display: flex;
   justify-content: space-between;
@@ -44,34 +67,45 @@ h2 {
   background: #fff3e0;
 }
 
+.option:active {
+  transform: scale(0.98);
+}
+
+/* SELECTED */
 .selected {
   border: 2px solid #fc8019;
   background: #fff7f0;
   transform: scale(1.02);
 }
 
+/* PRICE */
 .price {
   color: #fc8019;
   font-weight: bold;
 }
 
+/* BILL ROW */
 .row {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  font-size: 14px;
 }
 
+/* TOTAL */
 .total {
-  font-weight: bold;
   font-size: 18px;
+  font-weight: bold;
 }
 
+/* TRUST TEXT */
 .success-text {
   color: green;
   font-size: 12px;
+  margin-bottom: 8px;
 }
 
-/* BUTTON */
+/* PAY BUTTON */
 .pay-btn {
   width: 100%;
   margin-top: 16px;
@@ -83,10 +117,13 @@ h2 {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+  transition: 0.2s;
 }
 
 .pay-btn:active {
@@ -105,7 +142,9 @@ h2 {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* MODAL */
@@ -122,25 +161,37 @@ h2 {
   align-items: center;
 }
 
+/* MODAL BOX */
 .modal-content {
   background: white;
   padding: 30px;
   border-radius: 16px;
   text-align: center;
-  width: 300px;
+  width: 90%;
+  max-width: 300px;
   animation: pop 0.3s ease;
 }
 
+/* MODAL ANIMATION */
 @keyframes pop {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
+/* CHECK ICON */
 .check {
   font-size: 40px;
   color: green;
+  margin-bottom: 10px;
 }
 
+/* MODAL BUTTON */
 .modal button {
   margin-top: 15px;
   padding: 10px 20px;
@@ -148,4 +199,5 @@ h2 {
   background: #fc8019;
   color: white;
   border-radius: 8px;
+  cursor: pointer;
 }
